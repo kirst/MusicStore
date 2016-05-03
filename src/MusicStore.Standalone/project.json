@@ -11,25 +11,51 @@
       "DEMO",
       "TESTING"
     ],
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "compile": {
+      "include": [
+        "Program.cs",
+        "../../shared/**/*.cs",
+        "../MusicStore/**/*.cs"
+      ],
+      "exclude": [
+        "../MusicStore/Program.cs",
+        "../MusicStore/bin",
+        "../MusicStore/obj"
+      ]
+    },
+    "copyToOutput": {
+      "include": [
+        "../MusicStore/Areas/",
+        "../MusicStore/Views/",
+        "../MusicStore/wwwroot/",
+        "../MusicStore/config.json",
+        "../MusicStore/web.config"
+      ],
+      "mappings": {
+        "./Areas/": "../MusicStore/Areas/",
+        "./Views/": "../MusicStore/Views/",
+        "./wwwroot/": "../MusicStore/wwwroot/",
+        "./config.json": "../MusicStore/config.json",
+        "./web.config": "../MusicStore/web.config"
+      }
+    }
   },
-  "compile": [
-    "../../shared/**/*.cs",
-    "../MusicStore/**/*.cs"
-  ],
-  "exclude": [
-    "../MusicStore/Program.cs",
-    "../MusicStore/bin",
-    "../MusicStore/obj"
-  ],
   "publishOptions": {
     "include": [
-      "Areas",
-      "Views",
-      "wwwroot",
-      "config.json",
-      "web.config"
-    ]
+      "../MusicStore/Areas/",
+      "../MusicStore/Views/",
+      "../MusicStore/wwwroot/",
+      "../MusicStore/config.json",
+      "../MusicStore/web.config"
+    ],
+    "mappings": {
+      "./Areas/": "../MusicStore/Areas/",
+      "./Views/": "../MusicStore/Views/",
+      "./wwwroot/": "../MusicStore/wwwroot/",
+      "./config.json": "../MusicStore/config.json",
+      "./web.config": "../MusicStore/web.config"
+    }
   },
   "dependencies": {
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-*",
