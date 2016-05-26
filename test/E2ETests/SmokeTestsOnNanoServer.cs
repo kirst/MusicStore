@@ -52,6 +52,7 @@ namespace E2ETests
             {
                 var deploymentParameters = new RemoteWindowsDeploymentParameters(
                     Helpers.GetApplicationPath(applicationType),
+                    _remoteDeploymentConfig.DotnetRuntimeZipPath,
                     serverType,
                     RuntimeFlavor.CoreClr,
                     RuntimeArchitecture.x64,
